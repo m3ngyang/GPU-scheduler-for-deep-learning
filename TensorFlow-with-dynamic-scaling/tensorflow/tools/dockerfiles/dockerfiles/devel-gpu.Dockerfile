@@ -114,7 +114,8 @@ RUN apt-get update && apt-get install -y \
     openjdk-8-jdk \
     ${PYTHON}-dev \
     virtualenv \
-    swig
+    swig \
+    libssl-dev
 
 RUN ${PIP} --no-cache-dir install \
     Pillow \
@@ -123,7 +124,7 @@ RUN ${PIP} --no-cache-dir install \
     keras_preprocessing \
     matplotlib \
     mock \
-    numpy \
+    'numpy<1.19.0' \
     scipy \
     sklearn \
     pandas \
